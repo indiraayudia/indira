@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Indira Ayudia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #f5e1ff, #fef6ff);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 1rem;
+      background: url('latar.jpg') center/cover no-repeat;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(40px);
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      animation: slideFade 1.2s ease-out forwards;
+      color: #fff;
+    }
+
+    @keyframes slideFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #ffffff;
+      color: #800080;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 2px solid #800080;
+    }
+
+    .btn:hover {
+      background-color: #800080;
+      color: white;
+    }
+
+    .profile {
+      padding: 4rem 1rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
+    }
+
+    .profile.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bio {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      font-size: 1rem;
+      min-width: 140px;
+    }
+
+    .bio p {
+      opacity: 0;
+      transition: all 0.7s ease;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #4a004a;
+      text-align: justify;
+    }
+
+    .from-right {
+      transform: translateX(60px);
+    }
+
+    .from-left {
+      transform: translateX(-60px);
+    }
+
+    .bio p.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+    }
+
+    .whatsapp-float img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-content {
+        padding: 1.5rem;
+      }
+
+      .card {
+        font-size: 0.95rem;
+        padding: 1rem;
+      }
+
+      .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .bio p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tombol WhatsApp -->
+  <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Indira Ayudia</h1>
+      <p>Selamat datang di profil saya</p>
+      <a href="#profil" class="btn">Lihat Selengkapnya</a>
+    </div>
+  </section>
+
+  <section class="profile" id="profil">
+    <div class="bio" id="bio-text">
+      <div class="info-cards">
+        <div class="card"><strong>Kelas:</strong><br> XI TKJA</div>
+        <div class="card"><strong>Sekolah:</strong><br> SMKN 2</div>
+        <div class="card"><strong>Hobi:</strong><br> Jalan-jalan</div>
+        <div class="card"><strong>Cita-cita:</strong><br> Jaksa</div>
+      </div>
+
+      <p class="from-right">Saya adalah siswi kelas XI TKJA di SMKN 2. Semangat belajar dan rasa ingin tahu membuat saya selalu terbuka pada pengalaman dan tantangan baru dalam hidup.</p>
+
+      <p class="from-left">Dari kecil, saya punya cita-cita menjadi seorang jaksa. Profesi ini bagi saya sangat mulia karena dapat membantu menegakkan keadilan dan memperjuangkan kebenaran.</p>
+
+      <p class="from-right">Hobi saya adalah jalan-jalan. Melalui hobi ini, saya belajar banyak hal baru, mengenal tempat dan budaya berbeda, serta bertemu banyak orang dengan cerita menarik.</p>
+
+      <p class="from-left">Dengan dedikasi dan kerja keras, saya percaya impian saya bisa tercapai. Saya yakin setiap langkah kecil membawa dampak besar di masa depan.</p>
+
+      <p class="from-right">Terima kasih telah meluangkan waktu mengunjungi halaman ini dan mengenal saya lebih dekat. Semoga kita bisa saling menginspirasi!</p>
+    </div>
+  </section>
+
+  <script>
+    const section = document.querySelector('.profile');
+    window.addEventListener('scroll', () => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const trigger = window.innerHeight * 0.85;
+      if (sectionTop < trigger) {
+        section.classList.add('visible');
+        const paragraphs = document.querySelectorAll('.bio p');
+        paragraphs.forEach((p, i) => {
+          setTimeout(() => {
+            p.classList.add('visible');
+          }, i * 300);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
